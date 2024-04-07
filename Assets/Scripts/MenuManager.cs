@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Clase que controla el funcionamiento del Menu.
+/// Script que controla el funcionamiento del Menu.
 /// </summary>
 public class MenuManager : MonoBehaviour 
 {
-    // Variable con constantes de todo el juego.
+    // Constantes del juego.
     public Constants constants;
 
     /// <summary>

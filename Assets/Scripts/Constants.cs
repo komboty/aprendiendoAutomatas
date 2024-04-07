@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Clase que sirve para eliminar hardcore.
+/// Script que sirve para eliminar hardcore.
 /// </summary>
 public class Constants : MonoBehaviour
 {
@@ -16,8 +16,15 @@ public class Constants : MonoBehaviour
     /// <summary>
     /// Nombres de Inputs.
     /// </summary>
-    public string nameGetAxisX = "Horizontal";
-    public string nameGetAxisZ = "Vertical";
+    public string nameInputX = "Horizontal";
+    public string nameInputZ = "Vertical";
+    public string nameInputBtn1 = "Fire1";
+    public string nameInputBtn2 = "Fire2";
+
+    /// <summary>
+    /// Tags.
+    /// </summary>
+    public string tagGraspable = "Graspable";
 
     /// </summary>
     /// Valores default del jugador.
@@ -25,6 +32,5 @@ public class Constants : MonoBehaviour
     public float speedPlayer = 5f;
     public float limitDirectionMovePlayer = 0.1f;
     public float turnSmoothTimePlayer = 0.1f;
-    //public float turnSmoothVelocityPlayer = 0f;
 
 }

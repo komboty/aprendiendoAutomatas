@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Clase que controla el movimiento del Jugador.
+/// Script que controla el movimiento del Jugador.
 /// </summary>
 public class PlayerMove : MonoBehaviour
 {
-    // Variable con constantes de todo el juego.
+    // Constantes del juego.
     public Constants constants;
     // Controlador del jugador.
     public CharacterController characterController;
@@ -18,26 +18,19 @@ public class PlayerMove : MonoBehaviour
     private float turnSmoothVelocityPlayer;
     // Camara del jugador.
     public Transform cameraTransform;
-    // Fisicas del jugador;
-    // private Rigidbody rigidbody;
-
-    private void Awake()
-    {
-        //rigidbody = GetComponent<Rigidbody>();
-    }
 
     void Start()
     {
+        // Se asignan los valores por default.
         speed = constants.speedPlayer;
         turnSmoothTimePlayer = constants.turnSmoothTimePlayer;
-        //turnSmoothVelocityPlayer = constants.turnSmoothVelocityPlayer;
-}
+    }
 
     void Update()
     {
         // Se obtiene el evento de cuando se oprime algun boton.
-        float moveHorizontal = Input.GetAxis(constants.nameGetAxisX);
-        float moveVertical = Input.GetAxis(constants.nameGetAxisZ);
+        float moveHorizontal = Input.GetAxis(constants.nameInputX);
+        float moveVertical = Input.GetAxis(constants.nameInputZ);
         // Vector con la direccion a mover el personaje.
         Vector3 direction = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
 
