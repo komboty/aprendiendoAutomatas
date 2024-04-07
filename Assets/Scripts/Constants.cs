@@ -20,16 +20,19 @@ public class Constants : MonoBehaviour
     public string nameInputZ = "Vertical";
     public string nameInputBtn1 = "Fire1";
     public string nameInputBtn2 = "Fire2";
+    public string nameInputBtn3 = "Fire3";
 
     /// <summary>
     /// Tags.
     /// </summary>
-    public string tagGraspable = "Graspable";
+    public string tagPlayer = "Player";
+    public string tagGraspable = "Graspable";    
+    //public string tagPlatform = "Platform";
 
     /// </summary>
     /// Valores default del jugador.
     /// </summary>
-    public float speedPlayer = 5f;
+    public float speedPlayer = 9f;
     public float limitDirectionMovePlayer = 0.1f;
     public float turnSmoothTimePlayer = 0.1f;
 

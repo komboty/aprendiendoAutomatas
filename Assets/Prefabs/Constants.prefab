@@ -44,3 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070202a3a9c4b184882f581c8516f939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameSceneMenu: MainMenu
+  nameSceneNivel1: Nivel1
+  nameInputX: Horizontal
+  nameInputZ: Vertical
+  nameInputBtn1: Fire1
+  nameInputBtn2: Fire2
+  tagGraspable: Graspable
+  speedPlayer: 9
+  limitDirectionMovePlayer: 0.1
+  turnSmoothTimePlayer: 0.1
