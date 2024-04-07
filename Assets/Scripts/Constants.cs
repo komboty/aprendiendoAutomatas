@@ -23,5 +23,8 @@ public class Constants : MonoBehaviour
     /// Valores default del jugador.
     /// </summary>
     public float speedPlayer = 5f;
+    public float limitDirectionMovePlayer = 0.1f;
+    public float turnSmoothTimePlayer = 0.1f;
+    //public float turnSmoothVelocityPlayer = 0f;
 
 }

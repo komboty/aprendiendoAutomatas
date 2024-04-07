@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 474465615}
   - component: {fileID: 474465614}
   m_Layer: 5
-  m_Name: PBackground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 1233402037}
   - component: {fileID: 1233402036}
   m_Layer: 5
-  m_Name: BTExit
+  m_Name: TextBtnTExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 1280973805}
   - component: {fileID: 1280973804}
   m_Layer: 5
-  m_Name: TTitle
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 1492351802}
   - component: {fileID: 1492351801}
   m_Layer: 5
-  m_Name: BTPlay
+  m_Name: TextBtnTPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -949,7 +949,7 @@ GameObject:
   - component: {fileID: 1517696406}
   - component: {fileID: 1517696405}
   m_Layer: 5
-  m_Name: BPlay
+  m_Name: BtnPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 1659145751}
   - component: {fileID: 1659145750}
   m_Layer: 5
-  m_Name: BExit
+  m_Name: BtnExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
