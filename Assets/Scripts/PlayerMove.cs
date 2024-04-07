@@ -34,7 +34,7 @@ public class PlayerMove : MonoBehaviour
         // Vector con la direccion a mover el personaje.
         Vector3 direction = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
 
-        // Si se quiere mover el jugador, se mueve el personaje.
+        // Si se quiere mover el jugador.
         if (direction.magnitude >= constants.limitDirectionMovePlayer)
         {
             // Angulo de la direccion a mover.

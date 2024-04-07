@@ -64,33 +64,5 @@ public class PlayerGrapObject : MonoBehaviour
                 grabbedObject = other.gameObject;
             }
         }
-
-        /* No funciona:
-         * Al quitar la referencia de grabbedObject entra en Agarrar Objeto y 
-         * al mismo tiempo en Poner Objeto.
-         * 
-         * 
-        // Si se tiene al alcanze una plataforma.
-        if (other.gameObject.CompareTag(constants.tagPlatform))
-        {
-            // Si se oprimio el Boton 1 y se tiene agarrado un objeto.
-            if (Input.GetButton(constants.nameInputBtn1) && grabbedObject != null)
-            {
-                Debug.LogWarning("Poner Objeto");
-
-                //Debug.Log(other.transform.GetComponentInChildren<PutObject>());
-                Transform putArea = other.transform.GetChild(0);
-                Debug.Log(putArea);
-                
-                // El objeto agarrado se posiciona en la plataforma.
-                grabbedObject.transform.position = putArea.transform.position;
-                grabbedObject.gameObject.transform.SetParent(putArea.GetChild(0).transform);
-
-                // Se quita el objeto agarrado del Script.
-                //grabbedObject = null;
-                
-            }
-        }
-        */
     }
 }

@@ -16,59 +16,6 @@ public class PlatformPutObject : MonoBehaviour
     // Objeto puesto en la plataforma.
     public GameObject putObject = null;
     
-
-    void Update()
-    {
-        /* No funciona: 
-         * Se puede poner dos objetos en la plataforma
-         * 
-        //Quitar un objeto del area.
-        // Si se tiene un objeto puesto en el area.
-        if (putObject != null)
-        {
-            // Si se oprimio el Boton 1.
-            if (Input.GetButton(constants.nameInputBtn1))
-            {
-                Debug.LogWarning("Quitar Objeto de la Plataforma");
-
-                putObject = null;
-            }
-        }
-        */
-    }
-
-    /* No funciona: 
-     * No se puede quitar la referencia del Objeto en GripPoint
-     * Y se queda el objeto en GripPoint
-     * 
-    private void OnTriggerStay(Collider other)
-    {
-        // Si se acerca un objeto agarrable.
-        if (other.gameObject.CompareTag(constants.tagGraspable))
-        {            
-            // Si se oprimio el Boton 1 y no se tiene un objeto puesto en el area.
-            if (Input.GetButton(constants.nameInputBtn1) && putObject == null)
-            {
-                Debug.Log("Plataforma");
-                Transform grip = other.transform.parent.parent;
-                Debug.Log(grip.GetComponent<GrapObject>().grabbedObject);
-                //grip.GetComponent<GrapObject>().grabbedObject = null;
-                //grip.GetComponent<GrapObject>().SoltarObject();
-                Debug.Log(grip.GetComponent<GrapObject>().grabbedObject);                
-                
-                // El objeto agarrable se posiciona en la area.
-                other.transform.position = areaPoint.transform.position;
-                other.gameObject.transform.SetParent(areaPoint.transform);
-
-                // Se asigna el objeto agarrable al Script.
-                putObject = other.gameObject;
-                
-                // Se quita el objeto agarrable del otro Script.
-
-            }
-        }
-    }*/
-
     private void OnTriggerStay(Collider other)
     {
         // Si se acerca un objeto agarrable.
@@ -98,11 +45,39 @@ public class PlatformPutObject : MonoBehaviour
             // Si se oprimio el Boton 1 y se tiene un objeto puesto en la plataforma.
             if (Input.GetButton(constants.nameInputBtn1) && putObject != null)
             {
+                /*
                 Debug.LogWarning("Quitar Objeto de " + this.transform.parent.name);
 
                 // Se quita el objeto puesto en la plataforma del Script.
                 putObject = null;
+                */
+
+                //Invoke(nameof(DeleteRefPutObject), 3);                
+
+                // Si el jugador tiene agarro el mismo objeto de la plataforma.
+                if (grip.GetComponent<PlayerGrapObject>().grabbedObject == putObject)
+                {
+
+                    Debug.LogWarning("Quitar Objeto de " + this.transform.parent.name);
+
+                    // Se quita el objeto puesto en la plataforma del Script.
+                    putObject = null;
+                }
             }
         }
     }
+
+    /*
+    private void DeleteRefPutObject()
+    {
+        Debug.LogWarning("Quitar Objeto de " + this.transform.parent.name);
+
+        // Si el jugador tiene agarro el mismo objeto de la plataforma.
+        if (grip.GetComponent<PlayerGrapObject>().grabbedObject == putObject)
+        {
+            // Se quita el objeto puesto en la plataforma del Script.
+            putObject = null;
+        }   
+    }
+    */
 }
