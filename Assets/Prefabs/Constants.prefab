@@ -50,7 +50,12 @@ MonoBehaviour:
   nameInputZ: Vertical
   nameInputBtn1: Fire1
   nameInputBtn2: Fire2
-  tagGraspable: Graspable
+  nameInputBtn3: Fire3
+  tagPlayer: Player
+  tagSymbol: Symbol
+  tagPlatform: Platform
   speedPlayer: 9
   limitDirectionMovePlayer: 0.1
   turnSmoothTimePlayer: 0.1
+  SymbolRed: R
+  SymbolGreen: G

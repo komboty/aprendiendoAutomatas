@@ -24,7 +24,7 @@ public class PlayerGrapObject : MonoBehaviour
             // Si se oprimio el Boton 2.
             if (Input.GetButton(constants.nameInputBtn2))
             {
-                Debug.LogWarning("Soltar Objeto");
+                //Debug.LogWarning("Soltar Objeto");
 
                 // Se ponen las fisicas del objeto a agarrado.
                 Rigidbody rigidbodyOther = grabbedObject.GetComponent<Rigidbody>();
@@ -43,13 +43,13 @@ public class PlayerGrapObject : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {        
-        // Si se tiene al alcanze un objeto agarrable.
-        if (other.gameObject.CompareTag(constants.tagGraspable))
+        // Si se tiene al alcanze un simbolo.
+        if (other.gameObject.CompareTag(constants.tagSymbol))
         {
             // Si se oprimio el Boton 1 y no se tiene agarrado un objeto.
             if (Input.GetButton(constants.nameInputBtn1) && grabbedObject == null)
             {
-                Debug.LogWarning("Agarrar Objeto");
+                //Debug.LogWarning("Agarrar Objeto");
 
                 // Se quita las fisicas del objeto a agarrar.
                 Rigidbody rigidbodyOther = other.GetComponent<Rigidbody>();

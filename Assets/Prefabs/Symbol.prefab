@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5853472732333595484}
   m_Layer: 0
   m_Name: Symbol
-  m_TagString: Graspable
+  m_TagString: Symbol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

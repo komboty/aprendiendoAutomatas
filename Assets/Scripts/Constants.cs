@@ -26,8 +26,8 @@ public class Constants : MonoBehaviour
     /// Tags.
     /// </summary>
     public string tagPlayer = "Player";
-    public string tagGraspable = "Graspable";    
-    //public string tagPlatform = "Platform";
+    public string tagSymbol = "Symbol";
+    public string tagPlatform = "Platform";
 
     /// </summary>
     /// Valores default del jugador.
@@ -35,5 +35,11 @@ public class Constants : MonoBehaviour
     public float speedPlayer = 9f;
     public float limitDirectionMovePlayer = 0.1f;
     public float turnSmoothTimePlayer = 0.1f;
+
+    /// <summary>
+    /// Simbolos.
+    /// </summary>
+    public string SymbolRed = "R";
+    public string SymbolGreen = "G";
 
 }

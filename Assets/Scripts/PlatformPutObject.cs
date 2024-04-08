@@ -13,28 +13,23 @@ public class PlatformPutObject : MonoBehaviour
     public GameObject putPoint;
     // Area de agarre del jugador.
     public GameObject grip;
+    // Modelo 3D de plataforma.
+    public GameObject modelPlatform;
+    // Material por defecto de la plataforma.
+    public Material materialDeafult;
     // Objeto puesto en la plataforma.
-    public GameObject putObject = null;
-    
+    public GameObject putSymbol = null;
+
     private void OnTriggerStay(Collider other)
     {
-        // Si se acerca un objeto agarrable.
-        if (other.gameObject.CompareTag(constants.tagGraspable))
+        // Si se acerca un symbolo.
+        if (other.gameObject.CompareTag(constants.tagSymbol))
         {            
-            // Si se oprimio el Boton 3 y no se tiene un objeto puesto en la plataforma.
-            if (Input.GetButton(constants.nameInputBtn3) && putObject == null)
+            // Si se oprimio el Boton 3 y no se tiene un Simbolo puesto en la plataforma.
+            if (Input.GetButton(constants.nameInputBtn3) && putSymbol == null)
             {
-                Debug.LogWarning("Poner Objeto en " + this.transform.parent.name);
-
-                // Se quita el objeto agarrable del Script del jugador.
-                grip.GetComponent<PlayerGrapObject>().grabbedObject = null;
-
-                // El objeto agarrable se posiciona en la plataforma.
-                other.transform.position = putPoint.transform.position;
-                other.gameObject.transform.SetParent(putPoint.transform);
-
-                // Se asigna el objeto agarrable al Script.
-                putObject = other.gameObject;
+                // Se pone el symbolo en la plataforma.
+                PutSymbol(other);
             }
         }
 
@@ -42,42 +37,53 @@ public class PlatformPutObject : MonoBehaviour
         if (other.gameObject.Equals(grip))
         {
             //Debug.LogWarning("Se acerca el jugador");            
-            // Si se oprimio el Boton 1 y se tiene un objeto puesto en la plataforma.
-            if (Input.GetButton(constants.nameInputBtn1) && putObject != null)
+            // Si se oprimio el Boton 1 y se tiene un symbolo puesto en la plataforma.
+            if (Input.GetButton(constants.nameInputBtn1) && putSymbol != null)
             {
-                /*
-                Debug.LogWarning("Quitar Objeto de " + this.transform.parent.name);
-
-                // Se quita el objeto puesto en la plataforma del Script.
-                putObject = null;
-                */
-
-                //Invoke(nameof(DeleteRefPutObject), 3);                
-
-                // Si el jugador tiene agarro el mismo objeto de la plataforma.
-                if (grip.GetComponent<PlayerGrapObject>().grabbedObject == putObject)
+                // Si el jugador tiene agarrado el mismo simbolo que esta puesto en la plataforma.
+                if (grip.GetComponent<PlayerGrapObject>().grabbedObject == putSymbol)
                 {
-
-                    Debug.LogWarning("Quitar Objeto de " + this.transform.parent.name);
-
-                    // Se quita el objeto puesto en la plataforma del Script.
-                    putObject = null;
+                    // Se quita el simbolo puesto en la plataforma.
+                    QuitSymbol();
                 }
             }
         }
     }
 
-    /*
-    private void DeleteRefPutObject()
+    /// <summary>
+    /// Pone un simbolo en la plataforma.
+    /// </summary>
+    /// <param name="symbol">Simbolo a poner en la plataforma</param>
+    private void PutSymbol(Collider symbol)
     {
-        Debug.LogWarning("Quitar Objeto de " + this.transform.parent.name);
+        //Debug.LogWarning("Poner simbolo en " + modelPlatform.name);
 
-        // Si el jugador tiene agarro el mismo objeto de la plataforma.
-        if (grip.GetComponent<PlayerGrapObject>().grabbedObject == putObject)
-        {
-            // Se quita el objeto puesto en la plataforma del Script.
-            putObject = null;
-        }   
+        // Se quita el simbolo del Script del jugador.
+        grip.GetComponent<PlayerGrapObject>().grabbedObject = null;
+
+        // El simbolo se posiciona en la plataforma.
+        symbol.transform.position = putPoint.transform.position;
+        symbol.gameObject.transform.SetParent(putPoint.transform);
+
+        // Se pone el material que tiene el simbolo en la plataforma.
+        modelPlatform.GetComponent<MeshRenderer>().material = symbol.gameObject
+            .GetComponent<MeshRenderer>().material;
+
+        // Se asigna el simbolo al Script.
+        putSymbol = symbol.gameObject;
     }
-    */
+
+    /// <summary>
+    /// Quita el simbolo puesto en la plataforma.
+    /// </summary>
+    private void QuitSymbol()
+    {
+        //Debug.LogWarning("Quitar simbolo de " + modelPlatform.name);
+
+        // Se pone el material por defetco de la plataforma.
+        modelPlatform.GetComponent<MeshRenderer>().material = materialDeafult;
+
+        // Se quita el simbolo del Script.
+        putSymbol = null;
+    }
 }
