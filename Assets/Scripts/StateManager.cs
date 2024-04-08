@@ -10,6 +10,8 @@ public class StateManager : MonoBehaviour
     public GameObject modelState;
     // Nombre del simbolo a verificar.
     public string nameSymbol;
+    // Es estado final?
+    public bool stateFinal;
 
     private void OnTriggerStay(Collider other)
     {
@@ -37,11 +39,16 @@ public class StateManager : MonoBehaviour
                 modelState.GetComponent<MeshRenderer>().material = symbol.gameObject
                     .GetComponent<MeshRenderer>().material;
                 Destroy(this.gameObject);
+
+                if (stateFinal)
+                {
+                    Debug.LogWarning("GANASTE: Cadena valida");
+                }
             }
             // Si el nombre del simbolo NO es igual al del estado.
             else
             {
-                Debug.LogWarning("Cadena no valida");
+                Debug.LogWarning("INTENTALO DE NUEVO: Cadena no valida");
             }
         }
     }
