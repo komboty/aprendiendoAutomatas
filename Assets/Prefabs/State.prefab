@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7158473173181001463}
   - component: {fileID: 8747967964445878918}
   m_Layer: 0
-  m_Name: Model State
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,8 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   constants: {fileID: 6869586035158635912, guid: cc44a04ea5b6bc24c938aae4e4e56693, type: 3}
   modelState: {fileID: 4763593187528636616}
-  nameSymbol: 
-  stateFinal: 0
+  symbolName: 
+  isFinalState: 0
 --- !u!1 &8477924322932447015
 GameObject:
   m_ObjectHideFlags: 0

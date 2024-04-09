@@ -9,9 +9,9 @@ public class StateManager : MonoBehaviour
     // Modelo 3D del estado.
     public GameObject modelState;
     // Nombre del simbolo a verificar.
-    public string nameSymbol;
+    public string symbolName;
     // Es estado final?
-    public bool stateFinal;
+    public bool isFinalState;
 
     private void OnTriggerStay(Collider other)
     {
@@ -21,7 +21,7 @@ public class StateManager : MonoBehaviour
             //Debug.LogWarning("Paso " + other.transform.parent.name);
 
             // Se obtiene el simbolo puesto en la plataforma
-            GameObject symbol = other.GetComponent<PlatformPutObject>().putSymbol;
+            GameObject symbol = other.GetComponent<PlatformPutObject>().symbolPost;
 
             /* Si la plataforma no tiene simbolo.
             if (symbol == null)
@@ -31,7 +31,7 @@ public class StateManager : MonoBehaviour
             }*/
 
             // Si el nombre del simbolo es igual al del estado.
-            if (symbol.name.Equals(nameSymbol))
+            if (symbol.name.Equals(symbolName))
             {
                 // Se destruye la plataforma.
                 Destroy(other.transform.parent.gameObject);
@@ -40,7 +40,7 @@ public class StateManager : MonoBehaviour
                     .GetComponent<MeshRenderer>().material;
                 Destroy(this.gameObject);
 
-                if (stateFinal)
+                if (isFinalState)
                 {
                     Debug.LogWarning("GANASTE: Cadena valida");
                 }
