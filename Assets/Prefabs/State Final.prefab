@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 8413300856450941507}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 1, z: 0}
+  m_LocalPosition: {x: -1.4, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   constants: {fileID: 6869586035158635912, guid: cc44a04ea5b6bc24c938aae4e4e56693, type: 3}
   modelState: {fileID: 6572932483054668426}
+  canvasGameOver: {fileID: 0}
   symbolName: 
   isFinalState: 1
 --- !u!1 &9138274226654814810

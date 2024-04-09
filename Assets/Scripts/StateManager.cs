@@ -11,10 +11,13 @@ public class StateManager : MonoBehaviour
     public Constants constants;
     // Modelo 3D del estado.
     public GameObject modelState;
+    // Pantalla de GameOver.
+    public Canvas canvasGameOver;
     // Nombre del simbolo a verificar.
     public string symbolName;
     // Es estado final?
     public bool isFinalState;
+    
 
     private void OnTriggerStay(Collider other)
     {
@@ -45,13 +48,16 @@ public class StateManager : MonoBehaviour
 
                 if (isFinalState)
                 {
-                    Debug.LogWarning("GANASTE: Cadena valida");
+                    //Debug.LogWarning("GANASTE: Cadena valida");
+                    Time.timeScale = 0f;
                 }
             }
             // Si el nombre del simbolo NO es igual al del estado.
             else
             {
-                Debug.LogWarning("INTENTALO DE NUEVO: Cadena no valida");
+                //Debug.LogWarning("INTENTALO DE NUEVO: Cadena no valida");
+                canvasGameOver.gameObject.SetActive(true);
+                Time.timeScale = 0f;
             }
         }
     }
