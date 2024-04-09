@@ -24,10 +24,10 @@ public class Constants : MonoBehaviour
 
     /// <summary>
     /// Tags.
-    /// </summary>
-    public string tagPlayer = "Player";
+    /// </summary>    
     public string tagSymbol = "Symbol";
     public string tagPlatform = "Platform";
+    public string tagWaypoint = "Waypoint";
 
     /// </summary>
     /// Valores default del jugador.
@@ -35,6 +35,8 @@ public class Constants : MonoBehaviour
     public float speedPlayer = 9f;
     public float limitDirectionMovePlayer = 0.1f;
     public float turnSmoothTimePlayer = 0.1f;
+
+    public float speedWaypoints = 4f;
 
     /// <summary>
     /// Simbolos.
