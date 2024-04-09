@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script que controla un esatdo del automata.
+/// </summary>
 public class StateManager : MonoBehaviour
 {
     // Constantes del juego.

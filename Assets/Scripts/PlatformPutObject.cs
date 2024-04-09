@@ -12,7 +12,7 @@ public class PlatformPutObject : MonoBehaviour
     // Punto donde se pondra el objeto.
     public GameObject floorPoint;
     // Area de agarre del jugador.
-    public GameObject gripPLayer;
+    public GameObject gripPlayer;
     // Modelo 3D de plataforma.
     public GameObject platformModel;
     // Material por defecto de la plataforma.
@@ -34,14 +34,14 @@ public class PlatformPutObject : MonoBehaviour
         }
 
         // Si se acerca la zona de agarre del jugador.
-        if (other.gameObject.Equals(gripPLayer))
+        if (other.gameObject.Equals(gripPlayer))
         {
             //Debug.LogWarning("Se acerca el jugador");            
             // Si se oprimio el Boton 1 y se tiene un symbolo puesto en la plataforma.
             if (Input.GetButton(constants.nameInputBtn1) && symbolPost != null)
             {
                 // Si el jugador tiene agarrado el mismo simbolo que esta puesto en la plataforma.
-                if (gripPLayer.GetComponent<PlayerGrapObject>().grabbedObject == symbolPost)
+                if (gripPlayer.GetComponent<PlayerGrapObject>().grabbedObject == symbolPost)
                 {
                     // Se quita el simbolo puesto en la plataforma.
                     QuitSymbol();
@@ -59,7 +59,7 @@ public class PlatformPutObject : MonoBehaviour
         //Debug.LogWarning("Poner simbolo en " + modelPlatform.name);
 
         // Se quita el simbolo del Script del jugador.
-        gripPLayer.GetComponent<PlayerGrapObject>().grabbedObject = null;
+        gripPlayer.GetComponent<PlayerGrapObject>().grabbedObject = null;
 
         // El simbolo se posiciona en la plataforma.
         symbol.transform.position = floorPoint.transform.position;

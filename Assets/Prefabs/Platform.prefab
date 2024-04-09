@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   constants: {fileID: 6869586035158635912, guid: cc44a04ea5b6bc24c938aae4e4e56693, type: 3}
   floorPoint: {fileID: 2849455461159716312}
-  gripPLayer: {fileID: 0}
+  gripPlayer: {fileID: 0}
   platformModel: {fileID: 1423644888352480754}
   materialDeafult: {fileID: 2100000, guid: 4f64368a7869f9c4e828e36f76c6362d, type: 2}
   symbolPost: {fileID: 0}
@@ -262,7 +262,7 @@ Transform:
   m_GameObject: {fileID: 7217957349138007197}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -325,7 +325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7767494100878893446, guid: 9baeed635c106294980b09b36d7ee712, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7767494100878893446, guid: 9baeed635c106294980b09b36d7ee712, type: 3}
       propertyPath: moveObject

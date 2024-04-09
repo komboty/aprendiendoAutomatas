@@ -95,5 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constants: {fileID: 6869586035158635912, guid: cc44a04ea5b6bc24c938aae4e4e56693, type: 3}
+  moveObject: {fileID: 0}
   speed: 0
   target: {fileID: 0}
