@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 /// <summary>
@@ -13,6 +14,7 @@ public class StateManager : MonoBehaviour
     public GameObject modelState;
     // Pantalla de GameOver.
     public Canvas canvasGameOver;
+    public TextMeshProUGUI textGameOver;
     // Nombre del simbolo a verificar.
     public string symbolName;
     // Es estado final?
@@ -49,6 +51,8 @@ public class StateManager : MonoBehaviour
                 if (isFinalState)
                 {
                     //Debug.LogWarning("GANASTE: Cadena valida");
+                    canvasGameOver.gameObject.SetActive(true);
+                    textGameOver.text = "Ganaste";
                     Time.timeScale = 0f;
                 }
             }
